@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.445.0",
     "@clerk/nextjs": "^4.26.2",
     "@neondatabase/serverless": "^0.6.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "aws-sdk": "^2.1490.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",
