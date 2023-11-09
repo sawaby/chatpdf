@@ -11,7 +11,7 @@ type Props = {};
 
 const FileUpload = () => {
   const [uploading, setUploading] = useState(false);
-  const { mutate, isLoading } = useMutation({
+  const { mutate, isLoading} = useMutation({
     mutationFn: async ({
       file_key,
       file_name,
