@@ -11,7 +11,8 @@ type Props = {};
 
 const FileUpload = () => {
   const [uploading, setUploading] = useState(false);
-  const { mutate, isLoading} = useMutation({
+ 
+  const { mutate, isPending } = useMutation({
     mutationFn: async ({
       file_key,
       file_name,
@@ -48,6 +49,7 @@ const FileUpload = () => {
         mutate(data, {
           onSuccess: (data) => {
             console.log(data);
+            // toast.success(data.message);
           },
           onError: (err) => {
             toast.error("Error creating chat");
@@ -68,7 +70,7 @@ const FileUpload = () => {
         className="border-dashed border-2 rounded-xl cursor-pointer bg-gray-50 py-8 flex justify-center items-center flex-col"
       >
         <input {...getInputProps()} />
-        {(uploading || isLoading) ? (
+        {(uploading || isPending) ? (
             <>
             {/*loading state*/}
             <Loader2 className="h-10 w-10 text-slate-600 animate-spin" />
